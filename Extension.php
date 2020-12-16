@@ -16,8 +16,8 @@ class Extension extends BaseExtension
     {
         Event::listen('admin.controller.beforeResponse', function ($controller, $params){
 
-			// only show if logged in and location selected
-			if (!AdminAuth::isLogged() OR !$controller->getLocationId()) return;
+			// only show if logged in
+			if (!AdminAuth::isLogged()) return;
             
             // orders model
 	        if ($controller instanceof Orders){
